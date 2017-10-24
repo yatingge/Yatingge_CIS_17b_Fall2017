@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <title>Dolls from the Palace Museum </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src ="storefront.js"></script>
+        <script type="text/javascript" src="cart.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css" >
+    </head>
+
+     </body>
+
+        <div><h1>Dolls from the Palace Museum</h1></div>
+        <div><h1>Happy Fun Life</h1></div>
+        <div><p><input type="button" onclick="displayFunction()"  value ="Display Carts"></p> </div>
+
+
+        <div class ="column">
+        <script>
+
+            var url = document.location.href;
+            var info = url.split("?");
+            var nameValuePairs = info[1].split("&");
+            var map = nameValuePairs[0].split("=");
+            var username = map[1];
+            localStorage.setItem("username", username);
+            localStorage.setItem("numItems", 0);
+            var items = [
+                new Item("cat dolls", 5.5, 1),
+                new Item("generals dolls", 5.5, 1),
+                new Item("fishing dolls", 4.5, 1),
+                new Item("wedding dolls",6.6,1),
+                new Item("servants dolls",6.6,1),
+                new Item("guards dolls",6.6,1)
+
+
+            ];
+
+            var len = items.length;
+            for (var i = 0; i < items.length; i++) {
+                items[i].display();
+            }
+        </script>
+    </div>
+
+
+
+
+    </body>
+</html>

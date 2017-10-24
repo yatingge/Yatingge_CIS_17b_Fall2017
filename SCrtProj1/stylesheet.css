@@ -1,0 +1,39 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 18, 2017, 2:34:20 PM
+    Author     : yating
+*/
+
+h1{
+	text-align: center;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 40px;
+}
+
+p{
+	text-align: center;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 18px;
+}
+
+img{
+	text-align:center;
+    display:block;
+}
+
+input{
+    display:inline-block
+}
+
+.column{
+    column-count: 3;
+}
+
+input[type=button]:hover {
+    background-color:AntiqueWhite;
+    border-radius: 8px
+}

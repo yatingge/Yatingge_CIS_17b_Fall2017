@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <title>Survey after questions added</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Question.js" ></script>
+        <script type="text/javascript" src="getForm.js"></script>
+        <script type="text/javascript" src ="surveyResults.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css" >
+
+    </head>
+
+    <body>
+        <h1> College Student Survey </h1>
+
+
+        <h4>Enter your username:<input type ="text" name="userInput"> <br><br></h4>
+        <h4>This is a simple survey related to computer programming.</h4><br>
+
+        <script>
+            var url = document.location.href;
+            $_GET = getForm(url);
+            var counter = 0;
+            var answers = [];
+            for (property in $_GET) {
+                var str = $_GET[property]; //Place property value in string
+                var dec = decodeURIComponent(str); //Convert to ascii
+                var clean = dec.replace(/\++/g, ' '); //Remove + and replace by space
+                $_GET[property] = clean; //Cleaned values
+                counter++;
+                if (counter > 2 && clean !== "")
+                    answers.push(clean); //Place answers int their own array
+            }
+
+            //Fill the Question with form information and display
+            var newQuestion = new Question($_GET["Number"], $_GET["Question"], answers);
+            len = localStorage.getItem("len");
+            localStorage.setItem(len, JSON.stringify(newQuestion));
+            len++;
+            localStorage.setItem("len", len);
+            for (var i = 0; i < len; i++) {
+                var temp = localStorage.getItem(i);
+                var question = new Question(JSON.parse(temp));
+                question.display();
+            }
+            function addQuestion() {
+                window.location.replace("form.html");
+            }
+        </script>
+
+        <div class ="buttons">
+        <center>
+        <button onclick="addQuestion()"> Add Questions </button> 
+        <input type ="button" value ="Submit" onclick ="resultFunction()"> 
+        <input type ="button" value ="Clear" onclick ="clearFunction()"> 
+        <input type ="button" value="Display results" onclick ="displayResults()"></center>
+    </div>
+    </body>
+</html>

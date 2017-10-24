@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <title>Original Survey</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript" src="Question.js" ></script>
+        <script type="text/javascript" src="getForm.js"></script>
+        <script type="text/javascript" src ="surveyResults.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css" >
+
+    </head>
+    <body>
+        <h1> College Student Survey </h1>
+        <form>
+
+            <h4>Enter your username:<input type ="text" name="userInput"> <br><br></h4>
+            <h4>This is a simple survey related to computer programming.</h4><br>
+
+        </form>
+
+        <script>
+            var questions = [
+                new Question("classes", "How many programming classes have you compeleted?", ["only 1", "2~3", "4~5", "6 and more"]),
+                new Question("favoritelanguage", "What is your favorite programming language?", ["C++", "Java", "Python", "Javascript"]),
+                new Question("firstlanguage", "What was your first programming language?", ["C++", "Java", "Python", "Javascript"]),
+                new Question("dreamjob", "What is your dream job?", ["Web developer", "Software application developer", "Data Scientist", "Computer programmer"]),
+                new Question("gender", "What is your gender?", ["Male", "Female", "Others", "Prefer not to answer"])
+            ];
+            var len = questions.length;
+            for (var i = 0; i < questions.length; i++) {
+                questions[i].display();
+            }
+            len = questions.length;
+            localStorage.setItem("len", len);
+            for (var i = 0; i < len; i++) {
+                localStorage.setItem(i, JSON.stringify(questions[i]));
+            }
+            function addQuestion() {
+                window.location.replace("form.html");
+            }
+        </script>
+        
+        <div class ="buttons">
+        <center><button onclick="addQuestion()"> Add Questions </button> 
+
+        <input type ="button" value ="Submit" onclick ="resultFunction()"> 
+        <input type ="button" value ="Clear" onclick ="clearFunction()"> 
+        <input type ="button" value="Display results" onclick ="displayResults()"></center>
+    </div>
+
+
+    </body>
+</html>
