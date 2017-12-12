@@ -14,10 +14,10 @@ and open the template in the editor.
         // put your code here
 
 
-        $servername = "209.129.8.7";
-        $username = "yge";
-        $password = "katuarashi69";
-        $dbname = "yge_48947";
+        $servername = "207.0.0.1";
+        $username = "root";
+        $password = " ";
+        $dbname = "mydb";
 
 // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
