@@ -14,9 +14,9 @@ and open the template in the editor.
         // put your code here
 
 
-        $servername = "207.0.0.1";
+        $servername = "127.0.0.1";
         $username = "root";
-        $password = " ";
+        $password = "";
         $dbname = "mydb";
 
 // Create connection
