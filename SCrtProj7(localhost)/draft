@@ -1,0 +1,51 @@
+    // $num = $_COOKIE['num'];
+
+    // $i = 1;
+    // if(isset($username) AND isset($product) AND isset($price)){
+
+    //   $sql = "SELECT id_user FROM client_entity WHERE username = '" . $username . "'";
+    //   $result = $conn->query($sql);
+    //   if ($result->num_rows > 0) {
+    //         $row = $result->fetch_assoc();
+    //         $id_user = $row['id_user'];
+    //     }
+
+    //     $sql = "INSERT INTO cart_entity (id_user, product, price, quantity, id_cart)
+    //     VALUES ('$id_user', '$product', '$price', '1', '$i')";
+
+    //         if ($conn->query($sql) === TRUE) {
+    //             // echo "Username: Record has updated successfully<br>";
+    //          } else {
+    //                 echo "Error updating record: " . $conn->error;
+    //             }
+
+    // }
+
+    // $sql = "SELECT price, product, count(*) FROM cart_entity 
+    // WHERE id_user = $id_user and id_cart = $i GROUP BY product";
+    // $result = $conn->query($sql);
+    // if ($result->num_rows > 0) {
+
+        //  echo "<table style ='width: 80%'>
+        //        <tr>
+        //        <th></th>
+        //        <th>Product Name</th>
+        //        <th>Price</th>
+        //        <th>Quantity</th>
+        //        <th>Amount</th>
+        //        </tr>";
+
+
+        //     echo "<tr>";
+        //     echo "<td align='center'><img src='".$product.".jpg' width='80px' height='80px'></img></td>";
+        //     echo "<td align='center'>".$username."</td>";
+        //     echo "<td align='center'>".$price."</td>";
+        //     // echo "<td align='center'>".$num."</td>";
+
+
+
+        //     echo "<td align='center'>"+"</td>";  
+        //     echo "<tr>";     
+   
+
+        // echo "</table>";
